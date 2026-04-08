@@ -56,7 +56,7 @@ if __name__ == '__main__':
         N = int(sys.argv[1])
     building_ids = building_ids[:N]
 
-    num_procs_list = [1, 2, 3, 4, 5, 6, 7]  # number of workers — change this for timing experiments
+    num_procs_list = [1, 2, 4, 8, 16, 32]  # number of workers — change this for timing experiments
 
     times = []
     for num_proc in num_procs_list:
