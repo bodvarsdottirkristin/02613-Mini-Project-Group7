@@ -1,6 +1,7 @@
 from os.path import join
 import sys
 import numpy as np
+import time
 
 def load_data(load_dir, bid):
 
@@ -11,6 +12,7 @@ def load_data(load_dir, bid):
     
     return u, interior_mask
 
+@profile
 def jacobi(u, interior_mask, max_iter, atol=1e-6):
     u = np.copy(u)  
     for i in range(max_iter):

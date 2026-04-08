@@ -1,0 +1,8 @@
++ which python
++ alias
++ eval declare -f
+++ declare -f
++ /usr/bin/which --tty-only --read-alias --read-functions --show-tilde --show-dot python
++ python -c 'import sys; print(sys.executable)'
++ python -m kernprof -l simulator.py
+/dtu/projects/02613_2025/conda/miniconda3/envs/02613_2026/bin/python: No module named kernprof
