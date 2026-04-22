@@ -5,7 +5,7 @@ import numpy as np
 import matplotlib.pyplot as plt
 
 sys.path.insert(0, join(sys.path[0], '..', 'simulate'))
-from simulate_original import load_data, jacobi, summary_stats
+from ..simulate.simulate_original import load_data, jacobi, summary_stats
 
 LOAD_DIR = '/dtu/projects/02613_2025/data/modified_swiss_dwellings/'
 
