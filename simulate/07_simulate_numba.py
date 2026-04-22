@@ -1,10 +1,5 @@
 """
 Task 7: Jacobi solver with Numba JIT (CPU).
-
-Run like the reference:
-  python simulate_numba.py <N>
-
-Requires: numba, numpy (course env 02613_2026)
 """
 from __future__ import annotations
 

@@ -1,11 +1,5 @@
 """
 Task 8: Jacobi via a custom CUDA kernel (Numba).
-
-- One Jacobi sweep per kernel launch (threads sync between iterations at host level).
-- Fixed iteration count (no atol / early exit).
-- Helper: jacobi_cuda(u, interior_mask, max_iter) — same role as reference jacobi minus atol.
-
-Requires: GPU, Numba with CUDA, numpy. Run on a CUDA node (e.g. course GPU queue).
 """
 from __future__ import annotations
 
