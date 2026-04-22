@@ -53,8 +53,6 @@ def jacobi_cuda(u, interior_mask, max_iter):
     interior_mask = np.ascontiguousarray(interior_mask, dtype=np.bool_)
 
     d_src = cuda.to_device(u)
-    # Both buffers must start from u so ring indices 0 and -1 never touched by the kernel
-    # stay valid (512×512 updates only the inner block).
     d_dst = cuda.to_device(u)
     d_mask = cuda.to_device(interior_mask)
 
@@ -68,16 +66,12 @@ def jacobi_cuda(u, interior_mask, max_iter):
         d_src, d_dst = d_dst, d_src
 
     cuda.synchronize()
-    # After each step we swap: last write went to d_dst, then d_src, d_dst = d_dst, d_src
+
     out = d_src.copy_to_host()
     return out
 
 
 if __name__ == '__main__':
-    if not cuda.is_available():
-        print('CUDA is not available on this machine.', file=sys.stderr)
-        sys.exit(1)
-
     LOAD_DIR = '/dtu/projects/02613_2025/data/modified_swiss_dwellings/'
 
     with open(join(LOAD_DIR, 'building_ids.txt'), 'r') as f:
@@ -96,7 +90,6 @@ if __name__ == '__main__':
         all_u0[i] = u0
         all_mask[i] = m
 
-    # Match the reference default upper bound; task 8 uses fixed iterations (no early stop).
     max_iter = 20_000
 
     t0 = time.perf_counter()
