@@ -1,0 +1,62 @@
+No GPU on this node, CUDA module not loaded
+Average mean temperature: 14.71327091362127
+Average temperature std: 6.797923970606206
+Buildings >=50% area above 18°C: 813
+Buildings >=50% area below 15°C: 2460
+
+------------------------------------------------------------
+Sender: LSF System <lsfadmin@hpc.dtu.dk>
+Subject: Job 28297538: <visualize_results> in cluster <dcc> Done
+
+Job <visualize_results> was submitted from host <n-62-30-8> by user <s253093> in cluster <dcc> at Sun Apr 26 22:10:15 2026
+Job was executed on host(s) <n-62-31-23>, in queue <hpc>, as user <s253093> in cluster <dcc> at Sun Apr 26 22:10:17 2026
+</zhome/92/f/223286> was used as the home directory.
+</zhome/92/f/223286/02613-mini-project/visualization> was used as the working directory.
+Started at Sun Apr 26 22:10:17 2026
+Terminated at Sun Apr 26 22:10:22 2026
+Results reported at Sun Apr 26 22:10:22 2026
+
+Your job looked like:
+
+------------------------------------------------------------
+# LSBATCH: User input
+#!/bin/bash
+#BSUB -J visualize_results
+#BSUB -q hpc
+#BSUB -W 00:10
+#BSUB -R "rusage[mem=2GB]"
+#BSUB -o visualize_results.%J.out
+#BSUB -e visualize_results.%J.err
+#BSUB -B
+
+source /dtu/projects/02613_2025/conda/conda_init.sh
+conda activate 02613_2026
+
+cd /zhome/92/f/223286/02613-mini-project/visualization
+python visualize_results.py
+
+------------------------------------------------------------
+
+Successfully completed.
+
+Resource usage summary:
+
+    CPU time :                                   2.74 sec.
+    Max Memory :                                 -
+    Average Memory :                             -
+    Total Requested Memory :                     2048.00 MB
+    Delta Memory :                               -
+    Max Swap :                                   -
+    Max Processes :                              -
+    Max Threads :                                -
+    Run time :                                   5 sec.
+    Turnaround time :                            7 sec.
+
+The output (if any) is above this job summary.
+
+
+
+PS:
+
+Read file <visualize_results.28297538.err> for stderr output of this job.
+
