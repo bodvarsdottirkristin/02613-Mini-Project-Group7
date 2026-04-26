@@ -10,9 +10,8 @@ df["mean_temp"].hist(bins=50)
 plt.xlabel("Mean Temperature (°C)")
 plt.ylabel("Number of Buildings")
 plt.title("Distribution of Mean Building Temperatures")
-plt.show()
-
 plt.savefig("mean_temperature_hist.png", dpi=200)
+plt.show()
 
 # Average mean temperature
 avg_mean_temp = df["mean_temp"].mean()
