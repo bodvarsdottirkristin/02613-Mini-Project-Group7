@@ -1,12 +1,12 @@
 No GPU on this node, CUDA module not loaded
 building_id, mean_temp, std_temp, pct_above_18, pct_below_15
 10000, 14.01233878811275, 6.367431059312565, 30.941014791508444, 55.542295034537624
-Wrote profile results to simulator.py.lprof
+Wrote profile results to 'simulator.py.lprof'
 Inspect results with:
-python -m line_profiler -rmt "simulator.py.lprof"
+python -m line_profiler -rmt simulator.py.lprof
 Timer unit: 1e-06 s
 
-Total time: 6.67615 s
+Total time: 6.6886 s
 File: simulator.py
 Function: jacobi at line 15
 
@@ -14,31 +14,31 @@ Line #      Hits         Time  Per Hit   % Time  Line Contents
 ==============================================================
     15                                           @profile
     16                                           def jacobi(u, interior_mask, max_iter, atol=1e-6):
-    17         1       1434.8   1434.8      0.0      u = np.copy(u)  
-    18      3602       2213.8      0.6      0.0      for i in range(max_iter):
+    17         1       1518.4   1518.4      0.0      u = np.copy(u)  
+    18      3602       2559.5      0.7      0.0      for i in range(max_iter):
     19                                               # Compute average of left, right, up and down neighbors, see eq. (1)
-    20      3602    4161624.7   1155.4     62.3          u_new = 0.25 * (u[1:-1, :-2] + u[1:-1, 2:] + u[:-2, 1:-1] + u[2:, 1:-1])
-    21      3602     664033.5    184.4      9.9          u_new_interior = u_new[interior_mask]
-    22      3602    1163054.4    322.9     17.4          delta = np.abs(u[1:-1, 1:-1][interior_mask] - u_new_interior).max()
-    23      3602     676827.5    187.9     10.1          u[1:-1, 1:-1][interior_mask] = u_new_interior       
+    20      3602    4079371.8   1132.5     61.0          u_new = 0.25 * (u[1:-1, :-2] + u[1:-1, 2:] + u[:-2, 1:-1] + u[2:, 1:-1])
+    21      3602     683972.1    189.9     10.2          u_new_interior = u_new[interior_mask]
+    22      3602    1182528.2    328.3     17.7          delta = np.abs(u[1:-1, 1:-1][interior_mask] - u_new_interior).max()
+    23      3602     732621.2    203.4     11.0          u[1:-1, 1:-1][interior_mask] = u_new_interior       
     24                                                   
-    25      3602       6965.0      1.9      0.1          if delta < atol:
-    26         1          0.6      0.6      0.0              break
-    27         1          0.3      0.3      0.0      return u
+    25      3602       6025.2      1.7      0.1          if delta < atol:
+    26         1          1.3      1.3      0.0              break
+    27         1          2.4      2.4      0.0      return u
 
-  6.68 seconds - simulator.py:15 - jacobi
+  6.69 seconds - simulator.py:15 - jacobi
 
 ------------------------------------------------------------
 Sender: LSF System <lsfadmin@hpc.dtu.dk>
-Subject: Job 28160960: <simulate_original> in cluster <dcc> Done
+Subject: Job 28324909: <simulate_original> in cluster <dcc> Done
 
-Job <simulate_original> was submitted from host <hpclogin1> by user <s253167> in cluster <dcc> at Wed Apr  8 11:37:50 2026
-Job was executed on host(s) <4*n-62-31-24>, in queue <hpc>, as user <s253167> in cluster <dcc> at Wed Apr  8 11:37:51 2026
+Job <simulate_original> was submitted from host <n-62-27-18> by user <s253167> in cluster <dcc> at Wed Apr 29 11:51:56 2026
+Job was executed on host(s) <4*n-62-31-8>, in queue <hpc>, as user <s253167> in cluster <dcc> at Wed Apr 29 11:51:57 2026
 </zhome/0b/c/223393> was used as the home directory.
 </zhome/0b/c/223393/02613/02613-Mini-Project-Group7/simulate> was used as the working directory.
-Started at Wed Apr  8 11:37:51 2026
-Terminated at Wed Apr  8 11:37:59 2026
-Results reported at Wed Apr  8 11:37:59 2026
+Started at Wed Apr 29 11:51:57 2026
+Terminated at Wed Apr 29 11:52:05 2026
+Results reported at Wed Apr 29 11:52:05 2026
 
 Your job looked like:
 
@@ -55,7 +55,7 @@ Your job looked like:
 #BSUB -B 
 
 source /dtu/projects/02613_2025/conda/conda_init.sh
-conda activate 02613
+conda activate 02613_2026
 
 kernprof -l simulator.py
 python -m line_profiler -rmt simulator.py.lprof
@@ -65,7 +65,7 @@ Successfully completed.
 
 Resource usage summary:
 
-    CPU time :                                   8.23 sec.
+    CPU time :                                   8.34 sec.
     Max Memory :                                 -
     Average Memory :                             -
     Total Requested Memory :                     2048.00 MB
@@ -82,5 +82,5 @@ The output (if any) is above this job summary.
 
 PS:
 
-Read file <logs/04_profile_jacobi.28160960.err> for stderr output of this job.
+Read file <logs/04_profile_jacobi.28324909.err> for stderr output of this job.
 

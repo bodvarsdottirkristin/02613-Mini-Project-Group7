@@ -3,8 +3,8 @@
 #BSUB -q hpc
 #BSUB -W 00:10
 #BSUB -R "rusage[mem=2GB]"
-#BSUB -o visualize_results.%J.out
-#BSUB -e visualize_results.%J.err
+#BSUB -o logs/visualize_results.%J.out
+#BSUB -e logs/visualize_results.%J.err
 #BSUB -B
 
 source /dtu/projects/02613_2025/conda/conda_init.sh

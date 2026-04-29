@@ -3,8 +3,8 @@
 #BSUB -q gpul40s
 #BSUB -W 03:00
 #BSUB -R "rusage[mem=32GB]"
-#BSUB -o 12_cuda_batch.%J.out
-#BSUB -e 12_cuda_batch.%J.err
+#BSUB -o logs/12_cuda_batch.%J.out
+#BSUB -e logs/12_cuda_batch.%J.err
 #BSUB -B
 
 source /dtu/projects/02613_2025/conda/conda_init.sh

@@ -4,8 +4,8 @@
 #BSUB -W 00:04
 #BSUB -n 4
 #BSUB -R "rusage[mem=512MB] span[hosts=1] select[model==XeonGold6126]"
-#BSUB -o visualize.%J.out
-#BSUB -e visualize.%J.err
+#BSUB -o logs/visualize.%J.out
+#BSUB -e logs/visualize.%J.err
 #BSUB -B 
 
 source /dtu/projects/02613_2025/conda/conda_init.sh
