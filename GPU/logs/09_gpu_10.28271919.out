@@ -1,0 +1,74 @@
+building_id, mean_temp, std_temp, pct_above_18, pct_below_15
+10000, 14.012338788112752, 6.367431059312565, 30.941014791508444, 55.542295034537624
+10009, 11.000135812436369, 5.811144379826625, 16.6712734948236, 74.9723590310584
+10014, 14.744169941950117, 7.037733284673849, 38.26367541377415, 52.80837116508215
+10019, 14.735524480624484, 7.030325006703675, 38.14915412864569, 52.92926826787113
+10029, 10.616037322820358, 6.317331938274926, 18.25563221896085, 74.51301795448481
+10031, 12.507072852890545, 6.278432089100354, 24.044722033998173, 66.39513301711693
+10051, 13.289039951277404, 5.999085063388632, 25.97693550756574, 62.859923608050536
+10053, 11.366493551285707, 6.26121798185875, 19.9510754583921, 72.41052538787024
+10056, 14.220114507861702, 6.179461157398302, 31.763454814173965, 57.06174975667784
+10064, 12.716968937395848, 6.964227784263681, 28.79137124461432, 62.75688345539249
+Time: 37.66s
+Elapsed time: 41 seconds
+
+------------------------------------------------------------
+Sender: LSF System <lsfadmin@hpc.dtu.dk>
+Subject: Job 28271919: <09_gpu_10> in cluster <dcc> Done
+
+Job <09_gpu_10> was submitted from host <n-62-27-17> by user <s253095> in cluster <dcc> at Fri Apr 24 15:14:33 2026
+Job was executed on host(s) <4*n-62-20-10>, in queue <gpuv100>, as user <s253095> in cluster <dcc> at Fri Apr 24 15:14:39 2026
+</zhome/db/4/223305> was used as the home directory.
+</zhome/db/4/223305/Mini-Project-02613/GPU> was used as the working directory.
+Started at Fri Apr 24 15:14:39 2026
+Terminated at Fri Apr 24 15:15:22 2026
+Results reported at Fri Apr 24 15:15:22 2026
+
+Your job looked like:
+
+------------------------------------------------------------
+# LSBATCH: User input
+#!/bin/bash
+#BSUB -J 09_gpu_10
+#BSUB -q gpuv100
+#BSUB -W 00:30
+#BSUB -n 4
+#BSUB -R "span[hosts=1]"
+#BSUB -R "rusage[mem=1GB]"
+#BSUB -gpu "num=1"
+#BSUB -o logs/09_gpu_10.%J.out
+#BSUB -e logs/09_gpu_10.%J.err
+#BSUB -B 
+
+source /dtu/projects/02613_2025/conda/conda_init.sh
+conda activate 02613
+
+START=$SECONDS
+python 09_gpu.py 10
+echo "Elapsed time: $((SECONDS - START)) seconds"
+
+------------------------------------------------------------
+
+Successfully completed.
+
+Resource usage summary:
+
+    CPU time :                                   36.00 sec.
+    Max Memory :                                 171 MB
+    Average Memory :                             143.00 MB
+    Total Requested Memory :                     4096.00 MB
+    Delta Memory :                               3925.00 MB
+    Max Swap :                                   -
+    Max Processes :                              4
+    Max Threads :                                9
+    Run time :                                   43 sec.
+    Turnaround time :                            49 sec.
+
+The output (if any) is above this job summary.
+
+
+
+PS:
+
+Read file <logs/09_gpu_10.28271919.err> for stderr output of this job.
+

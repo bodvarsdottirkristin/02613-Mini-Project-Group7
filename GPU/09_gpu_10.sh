@@ -11,9 +11,7 @@
 #BSUB -B 
 
 source /dtu/projects/02613_2025/conda/conda_init.sh
-conda activate 02613_2026
-
-#rm -rf ~/.cupy/kernel_cache
+conda activate 02613
 
 START=$SECONDS
 python 09_gpu.py 10
