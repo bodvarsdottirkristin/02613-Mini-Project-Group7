@@ -101,7 +101,7 @@ building_id, mean_temp, std_temp, pct_above_18, pct_below_15
 10323, 14.294682420127744, 7.366448501699157, 38.07162799653413, 53.329482365777736
 10324, 16.409035201830466, 7.020615712907616, 49.327496510595104, 41.42399441695216
 10330, 14.981199775110316, 7.182183056906019, 40.825848417149196, 49.59801820696364
-Time: 1278.73s
+Time: 1489.24s
 Running with 2 processes...
 building_id, mean_temp, std_temp, pct_above_18, pct_below_15
 10000, 14.01233878811275, 6.367431059312565, 30.941014791508444, 55.542295034537624
@@ -204,7 +204,7 @@ building_id, mean_temp, std_temp, pct_above_18, pct_below_15
 10323, 14.294682420127744, 7.366448501699157, 38.07162799653413, 53.329482365777736
 10324, 16.409035201830466, 7.020615712907616, 49.327496510595104, 41.42399441695216
 10330, 14.981199775110316, 7.182183056906019, 40.825848417149196, 49.59801820696364
-Time: 738.33s
+Time: 794.88s
 Running with 4 processes...
 building_id, mean_temp, std_temp, pct_above_18, pct_below_15
 10000, 14.01233878811275, 6.367431059312565, 30.941014791508444, 55.542295034537624
@@ -307,7 +307,7 @@ building_id, mean_temp, std_temp, pct_above_18, pct_below_15
 10323, 14.294682420127744, 7.366448501699157, 38.07162799653413, 53.329482365777736
 10324, 16.409035201830466, 7.020615712907616, 49.327496510595104, 41.42399441695216
 10330, 14.981199775110316, 7.182183056906019, 40.825848417149196, 49.59801820696364
-Time: 436.40s
+Time: 490.26s
 Running with 8 processes...
 building_id, mean_temp, std_temp, pct_above_18, pct_below_15
 10000, 14.01233878811275, 6.367431059312565, 30.941014791508444, 55.542295034537624
@@ -410,7 +410,7 @@ building_id, mean_temp, std_temp, pct_above_18, pct_below_15
 10323, 14.294682420127744, 7.366448501699157, 38.07162799653413, 53.329482365777736
 10324, 16.409035201830466, 7.020615712907616, 49.327496510595104, 41.42399441695216
 10330, 14.981199775110316, 7.182183056906019, 40.825848417149196, 49.59801820696364
-Time: 284.18s
+Time: 287.30s
 Running with 16 processes...
 building_id, mean_temp, std_temp, pct_above_18, pct_below_15
 10000, 14.01233878811275, 6.367431059312565, 30.941014791508444, 55.542295034537624
@@ -513,7 +513,7 @@ building_id, mean_temp, std_temp, pct_above_18, pct_below_15
 10323, 14.294682420127744, 7.366448501699157, 38.07162799653413, 53.329482365777736
 10324, 16.409035201830466, 7.020615712907616, 49.327496510595104, 41.42399441695216
 10330, 14.981199775110316, 7.182183056906019, 40.825848417149196, 49.59801820696364
-Time: 280.46s
+Time: 297.26s
 Running with 32 processes...
 building_id, mean_temp, std_temp, pct_above_18, pct_below_15
 10000, 14.01233878811275, 6.367431059312565, 30.941014791508444, 55.542295034537624
@@ -616,55 +616,56 @@ building_id, mean_temp, std_temp, pct_above_18, pct_below_15
 10323, 14.294682420127744, 7.366448501699157, 38.07162799653413, 53.329482365777736
 10324, 16.409035201830466, 7.020615712907616, 49.327496510595104, 41.42399441695216
 10330, 14.981199775110316, 7.182183056906019, 40.825848417149196, 49.59801820696364
-Time: 283.47s
+Time: 303.51s
+Speedups for processes [1, 2, 4, 8, 16, 32] [1.0, 1.8735382346825211, 3.0376668023512616, 5.183512462378168, 5.009955426909284, 4.906717301663465]
 Speedup plot saved as 'speedup.png'
 
 ------------------------------------------------------------
 Sender: LSF System <lsfadmin@hpc.dtu.dk>
-Subject: Job 28165049: <logs/parallelized> in cluster <dcc> Done
+Subject: Job 28325408: <logs/parallelized_2026_dynamic> in cluster <dcc> Done
 
-Job <logs/parallelized> was submitted from host <n-62-30-8> by user <s253093> in cluster <dcc> at Wed Apr  8 22:07:33 2026
-Job was executed on host(s) <7*n-62-31-18>, in queue <hpc>, as user <s253093> in cluster <dcc> at Wed Apr  8 22:07:35 2026
+Job <logs/parallelized_2026_dynamic> was submitted from host <n-62-30-1> by user <s253093> in cluster <dcc> at Wed Apr 29 12:30:47 2026
+Job was executed on host(s) <7*n-62-31-8>, in queue <hpc>, as user <s253093> in cluster <dcc> at Wed Apr 29 12:48:38 2026
 </zhome/92/f/223286> was used as the home directory.
 </zhome/92/f/223286/02613-mini-project/parallelize> was used as the working directory.
-Started at Wed Apr  8 22:07:35 2026
-Terminated at Wed Apr  8 23:02:50 2026
-Results reported at Wed Apr  8 23:02:50 2026
+Started at Wed Apr 29 12:48:38 2026
+Terminated at Wed Apr 29 13:49:44 2026
+Results reported at Wed Apr 29 13:49:44 2026
 
 Your job looked like:
 
 ------------------------------------------------------------
 # LSBATCH: User input
 #!/bin/bash
-#BSUB -J logs/parallelized
+#BSUB -J logs/parallelized_2026_dynamic
 #BSUB -q hpc
 #BSUB -W 02:00
 #BSUB -n 7
 #BSUB -R "rusage[mem=512MB] span[hosts=1] select[model==XeonGold6126]"
-#BSUB -o logs/parallelized.%J.out
-#BSUB -e logs/parallelized.%J.err
+#BSUB -o logs/parallelized_2026_dynamic.%J.out
+#BSUB -e logs/parallelized_2026_dynamic.%J.err
 #BSUB -B 
 
 source /dtu/projects/02613_2025/conda/conda_init.sh
-conda activate 02613
+conda activate 02613_2026
 
-python paralellized.py 100
+python paralellized_dynamic_scheduling.py 100
 ------------------------------------------------------------
 
 Successfully completed.
 
 Resource usage summary:
 
-    CPU time :                                   9186.95 sec.
-    Max Memory :                                 2239 MB
-    Average Memory :                             1353.74 MB
+    CPU time :                                   10825.17 sec.
+    Max Memory :                                 1981 MB
+    Average Memory :                             1056.61 MB
     Total Requested Memory :                     3584.00 MB
-    Delta Memory :                               1345.00 MB
+    Delta Memory :                               1603.00 MB
     Max Swap :                                   -
     Max Processes :                              36
     Max Threads :                                40
-    Run time :                                   3315 sec.
-    Turnaround time :                            3317 sec.
+    Run time :                                   3666 sec.
+    Turnaround time :                            4737 sec.
 
 The output (if any) is above this job summary.
 
@@ -672,5 +673,5 @@ The output (if any) is above this job summary.
 
 PS:
 
-Read file <logs/parallelized.28165049.err> for stderr output of this job.
+Read file <logs/parallelized_2026_dynamic.28325408.err> for stderr output of this job.
 
