@@ -9,7 +9,7 @@
 #BSUB -B 
 
 source /dtu/projects/02613_2025/conda/conda_init.sh
-conda activate 02613
+conda activate 02613_2026
 
 kernprof -l simulator.py
 python -m line_profiler -rmt simulator.py.lprof
